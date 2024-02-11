@@ -1,0 +1,448 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    
+  }
+
+ 
+  /*--------------Main header and navigation bar---------------------*/
+  .navbar {
+    position: fixed;/* position fixed*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fa931d;
+    z-index: 1000;
+    color: white;
+  }
+
+  
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.5em;
+  }
+  
+  /* Candle Flame Styles */
+  .candle-holder {
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+  
+  .candle {
+    bottom: 0;
+    width: 40px;
+    height: 80px;
+    border-radius: 40px / 20px;
+    background: #190f02;
+    background: linear-gradient(#271303, #271303, #271303);
+    position: absolute;
+  }
+  
+  .candle:before {
+    content: '';
+    width: 100%;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #271303;
+    background: #271303;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .candle:after {
+    content: '';
+    width: 11px;
+    height: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    top: 7px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    position: absolute;
+  }
+  
+  .thread {
+    content: '';
+    width: 2px;
+    height: 12px;
+    top: -5px;
+    left: 50%;
+    z-index: 1;
+    border-radius: 20% 20% 0 0;
+    transform: translateX(-50%);
+    background: #121212;
+    position: absolute;
+  }
+  
+  .flame {
+    content: '';
+    width: 8px;
+    height: 40px;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    border-radius: 50% 50% 10% 10%;
+    background: linear-gradient(white 80%, transparent);
+    animation: moveFlame 6s linear infinite, enlargeFlame 5s linear infinite;
+    position: absolute;
+  }
+  
+  @keyframes moveFlame {
+    0%, 100% {
+      transform: translateX(-50%) rotate(-2deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(2deg);
+    }
+  }
+  
+  @keyframes enlargeFlame {
+    0%, 100% {
+      height: 40px;
+    }
+    50% {
+      height: 45px;
+    }
+  }
+  
+  .glow {
+    content: '';
+    width: 10px;
+    height: 24px;
+    border-radius: 50% 50% 15% 15%;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    background: rgba(0, 133, 255, .7);
+    box-shadow: 0 -16px 12px 0 #dc8a0c, 0 16px 20px 0 #dc8a0c,
+    inset 1px 0 1px 0 rgba(0, 133, 255, .6),
+    inset -1px 0 1px 0 rgba(0, 133, 255, .6);
+    position: absolute;
+  }
+  
+  .glow:before {
+    content: '';
+    width: 70%;
+    height: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    position: absolute;
+  }
+  
+  .blinking-glow {
+    content: '';
+    width: 40px;
+    height: 72px;
+    left: 50%;
+    top: -22%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #ff6000;
+    filter: blur(18px);
+    animation: blinkIt .1s infinite;
+    position: absolute;
+  }
+  
+  @keyframes blinkIt {
+    50% { opacity: .8;}
+  }
+  
+  /* End of Candle Flame Styles */
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+    font-size: 1.2em;
+  }
+  
+  .nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .nav-item:hover {
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+  }
+
+/*------------------------------------------------*/
+  
+
+
+/*--------------Background Image styling----------------------------------*/
+
+/*Background Image styling*/
+  .S1 {
+    background-color: #f1eded;
+    background-image: url("main-pizza1.avif");
+    margin: 0;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 0px;
+    transition: transform 1s ease-in-out; /* Adjust the duration and easing as needed */
+  }
+  
+  .S1:hover {
+    animation: moveBackground 0.5s ease-in-out forwards; /* Adjust the duration and easing as needed */
+  }
+  
+  @keyframes moveBackground {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1400px); /* Adjust the value based on your needs */
+    }
+  }
+  
+  .S1:not(:hover) {
+    transition: transform 0.5s ease-in-out; /* Smooth transition back to original position after hover */
+    transform: translateX(0);
+  }
+  
+  /*------------------------------------------------*/
+
+  
+  
+
+
+
+
+
+/*-----------------Slider styling-------------------------------*/
+.slider {
+  margin: 25px;
+  font-family: Arial, sans-serif;
+}
+
+#deal-heading {
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+#slider-container {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+div.pic1 {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 10px;
+  transition: transform 2s ease-in-out;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+div.pic1:hover {
+  transform: scale(1.05) rotate(360deg); /* 2D rotate effect on hover */
+}
+
+div.pic2 {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 10px;
+  transition: transform 2s ease-in-out;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+div.pic2:hover {
+  transform: scale(1) rotateY(180deg); /* 2D rotate effect on hover */
+}
+
+div.pic3 {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 10px;
+  transition: transform 2s ease-in-out;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+div.pic3:hover {
+  transform: scale(1.05) rotate(-360deg); /* 2D rotate effect on hover */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+  /*    testimonials*/
+
+  .testimonials{
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+  }
+
+  .quote{
+    background-color: white;
+  }
+
+  /*------------------------------------------------*/
+
+
+
+/*------------------cta styling------------------------------*/
+  .cta{
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+  }
+
+  #D7 button {
+    padding: 10px 20px;
+    background-color: green;
+    border: 2px solid #c4b3b3;
+    color: black;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+   /* position: fixed; */
+}
+
+#D7 button:hover {
+background-color: #fa931d;
+transform: scale(1.05);
+}
+
+/*------------------------------------------------*/
+
+
+
+/*--------------------Three columns styling----------------------------*/
+   .three-columns{
+    margin-top: 50px;
+   }
+
+    /*This is sections in which all information has stored*/
+    .First_Section,.Second_Section,.Third_Section{
+        background-color: #fff;
+        max-width: 100%;
+        margin: 40px 40px 40px 40px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 1px 3px 3px 1px rgb(160, 155, 155);
+        color: black;
+
+    }
+
+    .First_Section h1,.Second_Section h1,.Third_Section h1{
+      text-align: left;
+    }
+
+
+    /*The below code is for the application of the animation on the all text container(sections)*/
+
+    .First_Section:hover,.Second_Section:hover,.Third_Section:hover{
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+/*------------------------------------------------*/
+
+
+
+/*-------------------Form Styling with css-----------------------------*/
+.Container{/*This designing will be applied on the form because Form is actually inside a container*/
+        background-color: white;
+        border: 2px solid #c4b3b3;
+        width: 50%;
+        border-radius: 2px;
+        padding: 15px;
+        margin-left: 350px;
+        margin-top: 50px;
+     }
+    
+     h1{
+        text-align: center;
+        margin-top: 50px;
+     }
+    
+    input[type="text"],
+    input[type="Number"],
+    input[type="Email"],
+    select,textarea
+    {
+        /*Background-color property will be apply on all input containers*/
+    
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+    input[type="submit"],
+    input[type="reset"]
+    {
+    background-color: green;
+    border: 2px solid rgb(53, 248, 53);
+    border-radius: 2px;
+    width: 100%;
+    }
+    
+    input[type="submit"]:hover,
+    input[type="reset"]:hover{
+    background-color: #fa931d;
+    }
+
+/*------------------------------------------------*/
+
+
+/*---------------------Footer Styling---------------------------*/
+    footer{
+        text-align: center;
+        background-color:#fa931d ;
+        margin-top: 50px;
+        overflow: hidden;
+
+    }
+
+/*------------------------------------------------*/
